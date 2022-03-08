@@ -9,7 +9,7 @@ import java.security.*;
 
 public class Day4 {
     private final static String path = "src\\Day04\\input.txt";
-    private final static ArrayList<String> input = getInput();
+    private final static String input = "ckczppom";
 
     public static void main(String[] args){
         System.out.println("Part 1:");
@@ -22,7 +22,7 @@ public class Day4 {
     public static void teil1(){
         for(int i = 1;i>0;i++){
             try {
-                String hash = md5("ckczppom" + i);
+                String hash = md5(input + i);
                 if(hash.startsWith("00000")){
                     System.out.println(i);
                     return;
@@ -36,7 +36,7 @@ public class Day4 {
     public static void teil2(){
         for(int i = 1;i>0;i++){
             try {
-                String hash = md5("ckczppom" + i);
+                String hash = md5(input + i);
                 if(hash.startsWith("000000")){
                     System.out.println(i);
                     return;
