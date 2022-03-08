@@ -27,13 +27,14 @@ public class DayXX {
 
     private static ArrayList<String> getInput(){
         try{
-            BufferedReader br = new BufferedReader(new FileReader(path));
-            String line;
-            ArrayList<String> input = new ArrayList<>();
-            while((line = br.readLine()) != null){
-                input.add(line);
+            try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+                String line;
+                ArrayList<String> input = new ArrayList<>();
+                while((line = br.readLine()) != null){
+                    input.add(line);
+                }
+                return input;
             }
-            return input;
         }
         catch (IOException e){
             e.printStackTrace();
